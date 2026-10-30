@@ -58,7 +58,10 @@ button:focus-visible, a:focus-visible { outline: 1.5px solid var(--ink); outline
 #page[data-l="zh"] .tagline { font-family: var(--serif-zh); font-style: normal; font-weight: 600; letter-spacing: .12em; font-size: clamp(18px, 2vw, 22px); max-width: none; }
 .lede { max-width: 52ch; margin: 0; font-weight: 400; font-size: 17.5px; }
 #page[data-l="zh"] .lede { line-height: 1.95; font-size: 17px; }
-.ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px; }
+.hashtags { display: flex; flex-wrap: wrap; gap: 10px 22px; list-style: none; padding: 0; margin: 26px 0 0; }
+.hashtags li { font-family: var(--sans); font-size: 16px; font-weight: 600; letter-spacing: .03em; color: var(--rose); }
+#page[data-l="zh"] .hashtags li { letter-spacing: .08em; }
+.ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
 .btn { font: 600 14px var(--sans); letter-spacing: .1em; text-transform: uppercase; text-decoration: none; padding: 14px 26px; border-radius: 999px; border: 1px solid var(--ink); }
 #page[data-l="zh"] .btn { letter-spacing: .2em; }
 .btn.solid { background: var(--ink); color: var(--lavender); }
@@ -195,6 +198,12 @@ footer { padding-block: 36px 48px; display: flex; justify-content: space-between
         <h1>Helen <em>Cheng</em></h1>
         <p class="tagline"><span lang="zh-Hant">以敘事開啟合作，以數據驅動增長。</span><span lang="en">Opening doors through story, growing revenue through data.</span></p>
         <p class="lede"><span lang="zh-Hant">如果你的團隊正需要有人開拓合作夥伴、提高付費轉換，或把產品帶進海外市場，我能獨立從找資源、談合作一路推進到成交，並以數據說明每一步的成效。</span><span lang="en">If your team needs someone to open partner channels, lift paid conversion or take a product into new markets, I can drive it end to end on my own, from sourcing and negotiating to closing, and show the results in data.</span></p>
+        <ul class="hashtags" aria-label="Keywords">
+          <li><span lang="zh-Hant">#業務增長</span><span lang="en">#BusinessGrowth</span></li>
+          <li><span lang="zh-Hant">#項目管理</span><span lang="en">#ProjectManagement</span></li>
+          <li><span lang="zh-Hant">#專業公關</span><span lang="en">#PublicRelations</span></li>
+          <li><span lang="zh-Hant">#數位行銷</span><span lang="en">#DigitalMarketing</span></li>
+        </ul>
         <div class="ctas">
           <a class="btn solid" href="#work" data-scroll="work"><span lang="zh-Hant">看實際成果</span><span lang="en">See the results</span></a>
           <a class="btn line" href="#contact" data-scroll="contact"><span lang="zh-Hant">與我聯繫</span><span lang="en">Get in touch</span></a>

@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Helen Cheng</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Noto+Serif+TC:wght@500;700&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a single reading column, like a reporter's file on one person — datelined stories, a figures strip, and a career log. */
+:root {
+  --paper: #F5F6F8;
+  --card: #FFFFFF;
+  --ink: #15202B;
+  --muted: #5A6675;
+  --rule: #D9DEE5;
+  --accent: #1E4FC2;
+  --accent-soft: #E6ECFA;
+  --display: "Newsreader", "Noto Serif TC", Georgia, "PMingLiU", serif;
+  --body: "IBM Plex Sans", "Noto Sans TC", system-ui, "Microsoft JhengHei", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0F151C; --card: #16202A; --ink: #E7ECF2; --muted: #9AA7B6;
+    --rule: #2A3644; --accent: #7EA2FF; --accent-soft: #1C2A44; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0F151C; --card: #16202A; --ink: #E7ECF2; --muted: #9AA7B6;
+  --rule: #2A3644; --accent: #7EA2FF; --accent-soft: #1C2A44; color-scheme: dark;
+}
+
+html, body { margin: 0; }
+body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.65; }
+.wrap[data-l="zh"] [lang="en"], .wrap[data-l="en"] [lang="zh-Hant"] { display: none !important; }
+
+.wrap { max-width: 760px; margin: 0 auto; padding-block: 28px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+.topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+.mono { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.lang { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; padding: 3px; background: var(--card); }
+.lang button { font: 500 13px var(--body); color: var(--muted); background: none; border: 0; border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+header h1 { font-family: var(--display); font-weight: 600; font-size: clamp(40px, 8vw, 64px); line-height: 1.05; margin: 0 0 6px; letter-spacing: -.01em; text-wrap: balance; }
+header .zhname { font-family: "Noto Serif TC", var(--display); font-weight: 500; font-size: .5em; color: var(--muted); margin-left: .3em; letter-spacing: .05em; }
+.role { font-size: 18px; font-weight: 500; margin: 0 0 18px; }
+.lede { font-family: var(--display); font-size: 21px; line-height: 1.55; margin: 0; max-width: 62ch; text-wrap: pretty; }
+.wrap[data-l="zh"] .lede { font-size: 19px; line-height: 1.8; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; padding: 0; list-style: none; }
+.tags li { font-size: 13px; padding: 4px 11px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-weight: 500; }
+
+.figures { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 44px 0 8px; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); }
+.figures div { padding: 16px 14px 16px 0; min-width: 0; }
+.figures div + div { padding-left: 14px; border-left: 1px solid var(--rule); }
+.figures b { display: block; font-family: var(--display); font-weight: 600; font-size: 34px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.figures span { display: block; font-size: 13px; color: var(--muted); line-height: 1.45; margin-top: 6px; }
+@media (max-width: 600px) { .figures { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .figures div:nth-child(3) { padding-left: 0; border-left: 0; } .figures div:nth-child(n+3) { border-top: 1px solid var(--rule); } }
+
+h2 { font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin: 56px 0 18px; }
+
+.stories { display: grid; gap: 18px; }
+.story { background: var(--card); border: 1px solid var(--rule); border-radius: 6px; padding: 22px 24px; }
+.dateline { margin-bottom: 8px; }
+.story h3 { font-family: var(--display); font-weight: 600; font-size: 23px; line-height: 1.3; margin: 0 0 14px; text-wrap: balance; }
+.wrap[data-l="zh"] .story h3 { font-size: 21px; }
+.story dl { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 8px 16px; margin: 0; }
+.story dt { font-size: 12px; font-weight: 600; color: var(--muted); padding-top: 3px; letter-spacing: .04em; text-transform: uppercase; }
+.story dd { margin: 0; min-width: 0; }
+.story dd.result { font-weight: 600; }
+@media (max-width: 480px) { .story { padding: 18px; } .story dl { grid-template-columns: 1fr; gap: 2px; } .story dd { margin-bottom: 8px; } }
+
+.log { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--rule); }
+.log li { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+.log .yr { font-family: var(--mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 2px; }
+.log strong { display: block; font-weight: 600; }
+.log em { font-style: normal; color: var(--muted); font-size: 14px; }
+@media (max-width: 480px) { .log li { grid-template-columns: 1fr; gap: 2px; } }
+
+.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+@media (max-width: 600px) { .two { grid-template-columns: 1fr; } }
+.two ul { margin: 0; padding-left: 18px; }
+.two li { margin-bottom: 6px; }
+
+.contact { margin-top: 56px; padding: 26px 24px; background: var(--ink); color: var(--paper); border-radius: 6px; }
+.contact h2 { color: var(--paper); opacity: .7; margin: 0 0 10px; }
+.contact p { margin: 0 0 18px; font-family: var(--display); font-size: 20px; line-height: 1.5; }
+.rows { display: grid; gap: 10px; }
+.row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.row .k { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; opacity: .7; width: 52px; }
+.row .v { font-size: 17px; font-weight: 500; user-select: all; overflow-wrap: anywhere; min-width: 0; }
+.copy { font: 500 13px var(--body); color: var(--ink); background: var(--paper); border: 0; border-radius: 999px; padding: 5px 12px; cursor: pointer; }
+footer { margin-top: 28px; text-align: center; }
+@media (prefers-reduced-motion: no-preference) { .lang button, .copy { transition: background .15s, color .15s; } }
+</style>
+</head>
+<body>
+
+<div class="wrap" id="page" data-l="zh">
+  <div class="topbar">
+    <span class="mono"><span lang="zh-Hant">台北 · 個人經歷</span><span lang="en">Taipei · Profile</span></span>
+    <div class="lang" role="group" aria-label="Language">
+      <button id="btn-zh" type="button" aria-pressed="true" data-set="zh">中文</button>
+      <button id="btn-en" type="button" aria-pressed="false" data-set="en">EN</button>
+    </div>
+  </div>
+
+  <header>
+    <h1>Helen Cheng<span class="zhname">鄭惠文</span></h1>
+    <p class="role"><span lang="zh-Hant">商務開發 · 策略合作 · 訂閱增長</span><span lang="en">Business Development · Partnerships · Subscription Growth</span></p>
+    <p class="lede"><span lang="zh-Hant">新聞記者出身，後來十年都在做同一件事：替數位產品找到合作夥伴、找到付費用戶。從媒體訂閱、Web3 到 AI 產品，我在台灣、中國大陸和國際市場從零建立過合作渠道，也接過跨境支付，讓海外用戶付得了錢。</span><span lang="en">I started as a journalist, then spent the next ten years on one job: finding partners and paying users for digital products. Across media subscriptions, Web3, and AI, I have built partner channels from zero in Taiwan, mainland China, and international markets, and wired in cross-border payments so overseas users could actually pay.</span></p>
+    <ul class="tags">
+      <li lang="zh-Hant">合作開發與談判</li><li lang="en">Partner sourcing &amp; deals</li>
+      <li lang="zh-Hant">訂閱增長</li><li lang="en">Subscription growth</li>
+      <li lang="zh-Hant">跨境支付</li><li lang="en">Cross-border payments</li>
+      <li>Web3</li><li>AI</li>
+      <li lang="zh-Hant">中英雙語</li><li lang="en">Mandarin / English</li>
+    </ul>
+  </header>
+
+  <section class="figures" aria-label="Key figures">
+    <div><b>17+</b><span lang="zh-Hant">陌生開發談成的 YouTube 創作者合作</span><span lang="en">YouTube creator deals closed from cold outreach</span></div>
+    <div><b>90+</b><span lang="zh-Hant">新付費方案 3 個月內的訂戶</span><span lang="en">paid subscribers in a new tier's first 3 months</span></div>
+    <div><b>+700%</b><span lang="zh-Hant">財新訂閱續訂率成長</span><span lang="en">renewal-rate growth at Caixin Global</span></div>
+    <div><b>10+</b><span lang="zh-Hant">年經驗，橫跨兩岸與國際市場</span><span lang="en">years across Taiwan, China, and global markets</span></div>
+  </section>
+
+  <h2><span lang="zh-Hant">代表案例</span><span lang="en">Selected work</span></h2>
+  <div class="stories">
+    <article class="story">
+      <div class="dateline mono">2025–2026 · Taipei · Osparks (Vpin)</div>
+      <h3><span lang="zh-Hant">從零建立創作者合作渠道，帶動新付費方案上線</span><span lang="en">Building a creator partner channel from zero to launch a paid tier</span></h3>
+      <dl>
+        <dt><span lang="zh-Hant">背景</span><span lang="en">Context</span></dt>
+        <dd><span lang="zh-Hant">公司要推出 B2C Premium 訂閱方案，但沒有現成的推廣夥伴。</span><span lang="en">The company was launching a B2C Premium subscription tier with no existing promotion partners.</span></dd>
+        <dt><span lang="zh-Hant">做法</span><span lang="en">What I did</span></dt>
+        <dd><span lang="zh-Hant">自己找名單、陌生開發、提案到簽約，一路談成 YouTube 創作者／KOL 共同推廣；同時操盤中英文 Google Ads，並在展會現場做企業商務洽談。</span><span lang="en">Sourced, cold-pitched, and signed YouTube creators/KOLs as co-promotion partners; ran Chinese/English Google Ads alongside, and led enterprise BD at trade expos.</span></dd>
+        <dt><span lang="zh-Hant">成果</span><span lang="en">Result</span></dt>
+        <dd class="result"><span lang="zh-Hant">簽下 17 位以上創作者，上線 3 個月累積 90 位以上付費訂戶。</span><span lang="en">17+ creators signed; 90+ paid subscribers within 3 months.</span></dd>
+      </dl>
+    </article>
+
+    <article class="story">
+      <div class="dateline mono">2018–2021 · Beijing &amp; Taiwan · Caixin Global</div>
+      <h3><span lang="zh-Hant">重構訂閱商城，讓海外讀者付得了錢</span><span lang="en">Rebuilding a subscription store so overseas readers could pay</span></h3>
+      <dl>
+        <dt><span lang="zh-Hant">背景</span><span lang="en">Context</span></dt>
+        <dd><span lang="zh-Hant">財新的海外讀者付款不便，網頁和 App 在海外也開得慢。</span><span lang="en">Overseas readers struggled to pay, and the site and app loaded slowly outside China.</span></dd>
+        <dt><span lang="zh-Hant">做法</span><span lang="en">What I did</span></dt>
+        <dd><span lang="zh-Hant">主導商城重構，接入 PayPal 與 Stripe，重建用戶中心並優化海外速度；另外開拓臉書社團、海外優惠券平台、新聞聚合平台等新獲客渠道，並建立增長與留存的追蹤報告。</span><span lang="en">Led the rebuild, integrated PayPal and Stripe, rebuilt the user center, and sped up overseas access; opened new channels (Facebook groups, overseas coupon sites, news aggregators) and set up growth and retention reporting.</span></dd>
+        <dt><span lang="zh-Hant">成果</span><span lang="en">Result</span></dt>
+        <dd class="result"><span lang="zh-Hant">續訂率 +700%、App 累積用戶 +166.78%、活躍用戶 +104.78%。</span><span lang="en">Renewal rate +700%, cumulative app users +166.78%, active app users +104.78%.</span></dd>
+      </dl>
+    </article>
+
+    <article class="story">
+      <div class="dateline mono">2021–2023 · Remote · Initium Media</div>
+      <h3><span lang="zh-Hant">發行華語媒體第一個 NFT</span><span lang="en">Launching the first NFT from a Chinese-language newsroom</span></h3>
+      <dl>
+        <dt><span lang="zh-Hant">背景</span><span lang="en">Context</span></dt>
+        <dd><span lang="zh-Hant">端傳媒想試水 Web3，但華語媒體還沒有人發行過 NFT。</span><span lang="en">Initium wanted to test Web3, and no Chinese-language media outlet had issued an NFT before.</span></dd>
+        <dt><span lang="zh-Hant">做法</span><span lang="en">What I did</span></dt>
+        <dd><span lang="zh-Hant">從調研、商業評估、洽談 Web3 合作方，到經營媒體關係、發新聞稿，一手推到正式發行。同時推出新訂閱線「端 Plus」，並接入海外與加密貨幣支付。</span><span lang="en">Took "The Erased" from research and business case through Web3 partner talks, media relations, and the press release to launch. In parallel, launched the "Initium Plus" tier and added overseas and crypto payments.</span></dd>
+        <dt><span lang="zh-Hant">成果</span><span lang="en">Result</span></dt>
+        <dd class="result"><span lang="zh-Hant">「失去的____」成為華語媒體首發 NFT，獲得產業媒體報導。</span><span lang="en">"The Erased" became the first NFT from a Chinese-language outlet and drew industry coverage.</span></dd>
+      </dl>
+    </article>
+
+    <article class="story">
+      <div class="dateline mono">2023–2025 · Taipei / Nanjing · Digiwin</div>
+      <h3><span lang="zh-Hant">帶兩岸團隊把 AI 助理做成可以賣的產品</span><span lang="en">Turning internal AI assistants into products with a cross-strait team</span></h3>
+      <dl>
+        <dt><span lang="zh-Hant">背景</span><span lang="en">Context</span></dt>
+        <dd><span lang="zh-Hant">公司內部開發的 AI 工具，需要跨部門整合才能對外銷售。</span><span lang="en">AI tools built in-house needed cross-team work before they could be sold.</span></dd>
+        <dt><span lang="zh-Hant">做法</span><span lang="en">What I did</span></dt>
+        <dd><span lang="zh-Hant">帶領 20-50 人的兩岸團隊，協調 PaaS 與 SaaS 部門，建構差旅、外勤、出勤三款 AI 助理；並以資本市場角度向股東與投資人簡報成果。</span><span lang="en">Led a 20–50 person team across Taiwan and Nanjing, coordinating PaaS and SaaS units on three AI assistants (travel, field service, attendance), and presented results to shareholders and investors.</span></dd>
+        <dt><span lang="zh-Hant">成果</span><span lang="en">Result</span></dt>
+        <dd class="result"><span lang="zh-Hant">三款 AI 助理完成建構並推向企業客戶銷售。</span><span lang="en">Three AI assistants built and brought to enterprise customers.</span></dd>
+      </dl>
+    </article>
+  </div>
+
+  <h2><span lang="zh-Hant">經歷</span><span lang="en">Career</span></h2>
+  <ol class="log">
+    <li><span class="yr">2025 – 2026</span><div><strong><span lang="zh-Hant">成長行銷與商務開發協理</span><span lang="en">Associate Director, Growth Marketing &amp; BD</span></strong><em><span lang="zh-Hant">繁星媒合體（Vpin / Osparks）· 台北</span><span lang="en">Osparks (Vpin) · Taipei</span></em></div></li>
+    <li><span class="yr">2023 – 2025</span><div><strong><span lang="zh-Hant">項目總監／營銷專案經理</span><span lang="en">Project Director / Marketing Project Manager</span></strong><em><span lang="zh-Hant">鼎新數智 · 台北／南京</span><span lang="en">Digiwin · Taipei / Nanjing</span></em></div></li>
+    <li><span class="yr">2021 – 2023</span><div><strong><span lang="zh-Hant">用戶運營經理</span><span lang="en">User Operations Manager</span></strong><em><span lang="zh-Hant">端傳媒 · 遠程</span><span lang="en">Initium Media · Remote</span></em></div></li>
+    <li><span class="yr">2018 – 2021</span><div><strong><span lang="zh-Hant">增長運營經理</span><span lang="en">Growth Operations Manager</span></strong><em><span lang="zh-Hant">財新國際 · 北京與台灣</span><span lang="en">Caixin Global · Beijing &amp; Taiwan</span></em></div></li>
+    <li><span class="yr">2017 – 2018</span><div><strong><span lang="zh-Hant">高級產品運營分析師／高級編輯</span><span lang="en">Senior Operations Analyst / Senior Editor</span></strong><em><span lang="zh-Hant">百度 · 北京（帶領 13 個內容垂類團隊）</span><span lang="en">Baidu · Beijing (led 13 content-category teams)</span></em></div></li>
+    <li><span class="yr">2014 – 2017</span><div><strong><span lang="zh-Hant">新聞編輯</span><span lang="en">News Editor</span></strong><em><span lang="zh-Hant">中央通訊社 · 台北</span><span lang="en">Central News Agency · Taipei</span></em></div></li>
+  </ol>
+
+  <div class="two">
+    <div>
+      <h2><span lang="zh-Hant">學歷</span><span lang="en">Education</span></h2>
+      <ul>
+        <li><span lang="zh-Hant">北京大學 新聞與傳播碩士（2014）</span><span lang="en">M.A. Journalism &amp; Communication, Peking University (2014)</span></li>
+        <li><span lang="zh-Hant">國立政治大學 新聞學學士（2012）</span><span lang="en">B.A. Journalism, National Chengchi University (2012)</span></li>
+      </ul>
+    </div>
+    <div>
+      <h2><span lang="zh-Hant">證照與著作</span><span lang="en">Certificates &amp; writing</span></h2>
+      <ul>
+        <li><span lang="zh-Hant">iPAS AI 應用規劃師（2025）</span><span lang="en">iPAS AI Application Planner (2025)</span></li>
+        <li><span lang="zh-Hant">區塊鏈產業分析師 Level A（2022）</span><span lang="en">Blockchain Industry Analyst, Level A (2022)</span></li>
+        <li><span lang="zh-Hant">著有《小編開講》（2017）</span><span lang="en">Author of a book on social media operations (2017)</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="contact">
+    <h2><span lang="zh-Hant">聯絡我</span><span lang="en">Get in touch</span></h2>
+    <p><span lang="zh-Hant">想聊合作、職缺或任何一個案例的細節，都歡迎直接聯絡。</span><span lang="en">Happy to talk about a role, a partnership, or the details behind any of these stories.</span></p>
+    <div class="rows">
+      <div class="row"><span class="k">Email</span><span class="v" id="email">huiwenhelen26@gmail.com</span><button class="copy" id="copy-email" type="button" data-target="email"><span lang="zh-Hant">複製</span><span lang="en">Copy</span></button></div>
+      <div class="row"><span class="k">Line</span><span class="v" id="line">huiwenhelen</span><button class="copy" id="copy-line" type="button" data-target="line"><span lang="zh-Hant">複製</span><span lang="en">Copy</span></button></div>
+    </div>
+  </section>
+  <footer class="mono"><span lang="zh-Hant">更新於 2026 年 10 月</span><span lang="en">Updated October 2026</span></footer>
+</div>
+
+<script>
+(function () {
+  var body = document.getElementById('page');
+  function setLang(l, save) {
+    body.setAttribute('data-l', l);
+    document.documentElement.lang = l === 'en' ? 'en' : 'zh-Hant';
+    document.querySelectorAll('.lang button').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.dataset.set === l));
+    });
+    if (save) { try { localStorage.setItem('lang', l); } catch (e) {} }
+  }
+  var start = 'zh';
+  var h = (location.hash || '').replace('#', '');
+  if (h === 'en' || h === 'zh') start = h;
+  else { try { var s = localStorage.getItem('lang'); if (s === 'en' || s === 'zh') start = s; } catch (e) {} }
+  setLang(start, false);
+  window.addEventListener('hashchange', function () {
+    var x = location.hash.replace('#', '');
+    if (x === 'en' || x === 'zh') setLang(x, false);
+  });
+  document.querySelectorAll('.lang button').forEach(function (b) {
+    b.addEventListener('click', function () { setLang(b.dataset.set, true); });
+  });
+  document.querySelectorAll('.copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var el = document.getElementById(btn.dataset.target);
+      var text = el.textContent;
+      function done() {
+        var old = btn.innerHTML;
+        btn.textContent = body.getAttribute('data-l') === 'en' ? 'Copied' : '已複製';
+        setTimeout(function () { btn.innerHTML = old; }, 1500);
+      }
+      function fallback() {
+        var r = document.createRange(); r.selectNodeContents(el);
+        var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } else { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>

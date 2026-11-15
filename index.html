@@ -18,6 +18,14 @@
 <meta name="twitter:description" content="以敘事開啟合作，以數據驅動增長。 Opening doors through story, growing revenue through data.">
 <meta name="twitter:image" content="https://huiwenhelen.github.io/og-image.png">
 <meta name="description" content="以敘事開啟合作，以數據驅動增長。 Opening doors through story, growing revenue through data.">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V038JCBWET"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-V038JCBWET');
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&family=Manrope:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
@@ -255,8 +263,8 @@ footer { padding-block: 36px 48px; display: flex; justify-content: space-between
           <li><span lang="zh-Hant">#數位行銷</span><span lang="en">#DigitalMarketing</span></li>
         </ul>
         <div class="ctas">
-          <a class="btn solid" href="#work" data-scroll="work"><span lang="zh-Hant">看實際成果</span><span lang="en">See the results</span></a>
-          <a class="btn line" href="#contact" data-scroll="contact"><span lang="zh-Hant">與我聯繫</span><span lang="en">Get in touch</span></a>
+          <a class="btn solid" href="#work" data-scroll="work" data-cta="see_results"><span lang="zh-Hant">看實際成果</span><span lang="en">See the results</span></a>
+          <a class="btn line" href="#contact" data-scroll="contact" data-cta="get_in_touch"><span lang="zh-Hant">與我聯繫</span><span lang="en">Get in touch</span></a>
         </div>
       </div>
       <div class="art" aria-hidden="true">
@@ -467,6 +475,7 @@ footer { padding-block: 36px 48px; display: flex; justify-content: space-between
 <script>
 (function () {
   var page = document.getElementById('page');
+  function track(name, params) { try { if (window.gtag) gtag('event', name, params || {}); } catch (e) {} }
   function setLang(l, save) {
     page.setAttribute('data-l', l);
     document.documentElement.lang = l === 'en' ? 'en' : 'zh-Hant';
@@ -485,7 +494,10 @@ footer { padding-block: 36px 48px; display: flex; justify-content: space-between
     if (x === 'en' || x === 'zh') setLang(x, false);
   });
   document.querySelectorAll('.lang button').forEach(function (b) {
-    b.addEventListener('click', function () { setLang(b.dataset.set, true); });
+    b.addEventListener('click', function () {
+      if (page.getAttribute('data-l') !== b.dataset.set) track('language_switch', { language: b.dataset.set });
+      setLang(b.dataset.set, true);
+    });
   });
   document.querySelectorAll('[data-scroll]').forEach(function (a) {
     a.addEventListener('click', function (e) {
@@ -496,8 +508,18 @@ footer { padding-block: 36px 48px; display: flex; justify-content: space-between
       el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
     });
   });
+  document.querySelectorAll('[data-cta]').forEach(function (a) {
+    a.addEventListener('click', function () { track('cta_click', { cta_name: a.dataset.cta }); });
+  });
+  document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
+    a.addEventListener('click', function () { track('email_click', { location: 'contact_card' }); });
+  });
+  document.querySelectorAll('a.verify').forEach(function (a) {
+    a.addEventListener('click', function () { track('cert_verify_click', { certificate: 'HarvardX LBTechX1' }); });
+  });
   document.querySelectorAll('.copy').forEach(function (btn) {
     btn.addEventListener('click', function () {
+      track('copy_contact', { contact_type: btn.dataset.target });
       var el = document.getElementById(btn.dataset.target);
       var text = el.textContent;
       function done() {
@@ -516,7 +538,7 @@ footer { padding-block: 36px 48px; display: flex; justify-content: space-between
   });
 
   /* Contact form → Google Apps Script → private Google Sheet */
-  var FORM_ENDPOINT = 'PASTE_APPS_SCRIPT_WEB_APP_URL_HERE';
+  var FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwJQ3iWhGKiB3CVpwHCEgKQXr_tsC6ZcLdDZdkB33IbHjF8xGuKN49cv8xl430TcHTI/exec';
   var form = document.getElementById('contact-form');
   var msg = document.getElementById('f-msg');
   var submit = document.getElementById('f-submit');
@@ -549,6 +571,7 @@ footer { padding-block: 36px 48px; display: flex; justify-content: space-between
     msg.textContent = t('傳送中…', 'Sending…');
     fetch(FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', body: body })
       .then(function () {
+        track('generate_lead', { lead_topics: topics.join(', '), topic_count: topics.length, language: page.getAttribute('data-l') });
         form.hidden = true;
         doneBox.hidden = false;
         doneBox.focus();

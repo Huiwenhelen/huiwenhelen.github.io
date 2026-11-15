@@ -215,6 +215,7 @@ legend.label { padding: 0; margin-bottom: 12px; }
 .f-foot { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
 .f-foot .btn { cursor: pointer; }
 .f-foot .btn[disabled] { opacity: .55; cursor: wait; }
+.f-privacy { margin: -8px 0 0; font-size: 13.5px; line-height: 1.7; color: var(--muted); max-width: 62ch; }
 .f-msg { margin: 0; font-size: 15px; color: #9B2C3B; }
 .f-done { border-top: 1px solid var(--ink); padding-top: 26px; }
 .f-done:focus { outline: none; }
@@ -460,6 +461,7 @@ footer { padding-block: 36px 48px; display: flex; justify-content: space-between
           <button class="btn solid" type="submit" id="f-submit"><span lang="zh-Hant">送出</span><span lang="en">Send</span></button>
           <p class="f-msg" id="f-msg" role="status" aria-live="polite"></p>
         </div>
+        <p class="f-privacy"><span lang="zh-Hant">您提供的姓名、Email 與留言僅用於回覆此次聯繫，不會提供給第三方，您可隨時來信要求刪除。本網站使用 Google Analytics 匿名統計瀏覽情況。</span><span lang="en">Your name, email and message are used only to reply to you and are never shared with third parties; email me anytime to have them deleted. This site uses Google Analytics to measure visits anonymously.</span></p>
       </form>
       <div class="f-done" id="f-done" hidden tabindex="-1">
         <h3><span lang="zh-Hant">謝謝您的來信！</span><span lang="en">Thank you!</span></h3>

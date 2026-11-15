@@ -176,6 +176,39 @@ button:focus-visible, a:focus-visible { outline: 1.5px solid var(--ink); outline
 .copy:hover { background: var(--ink); color: var(--blush); }
 @media (max-width: 640px) { .c-row { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 16px; } .c-row .label { grid-column: 1 / -1; } }
 
+[hidden] { display: none !important; }
+.verify { white-space: nowrap; color: var(--rose); font-weight: 600; text-underline-offset: 3px; }
+
+/* ---------- Contact form ---------- */
+.form-wrap { margin-top: 88px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 56px; }
+.form-head h3, .f-done h3 { font-family: var(--serif); font-weight: 500; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.1; letter-spacing: -.015em; margin: 14px 0 18px; }
+.form-head h3 em { font-style: italic; }
+#page[data-l="zh"] .form-head h3, #page[data-l="zh"] .f-done h3 { font-family: var(--serif-zh); font-weight: 600; font-size: clamp(26px, 2.8vw, 34px); letter-spacing: .08em; line-height: 1.4; }
+.form-head p { margin: 0; max-width: 34ch; }
+#contact-form { display: grid; gap: 28px; min-width: 0; }
+.f-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.f { display: grid; gap: 8px; border: 0; padding: 0; margin: 0; min-width: 0; }
+.f input[type=text], .f input[type=email], .f textarea { font: 400 17px var(--sans); color: var(--ink); background: rgba(253,252,251,.55); border: 0; border-bottom: 1px solid var(--ink); border-radius: 0; padding: 12px 4px; width: 100%; box-sizing: border-box; }
+.f textarea { resize: vertical; border: 1px solid var(--ink); padding: 12px 14px; line-height: 1.7; }
+.f input:focus, .f textarea:focus { outline: none; background: var(--paper); box-shadow: 0 2px 0 var(--ink); }
+.f [aria-invalid="true"] { border-color: #9B2C3B; box-shadow: 0 2px 0 #9B2C3B; }
+legend.label { padding: 0; margin-bottom: 12px; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { position: relative; cursor: pointer; }
+.chip input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.chip > span { display: inline-block; font-size: 15px; font-weight: 500; padding: 8px 16px; border: 1px solid var(--ink); border-radius: 999px; transition: background .2s, color .2s; }
+.chip input:checked + span { background: var(--ink); color: var(--blush); }
+.chip input:focus-visible + span { outline: 1.5px solid var(--ink); outline-offset: 3px; }
+.hp { position: absolute !important; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.f-foot { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.f-foot .btn { cursor: pointer; }
+.f-foot .btn[disabled] { opacity: .55; cursor: wait; }
+.f-msg { margin: 0; font-size: 15px; color: #9B2C3B; }
+.f-done { border-top: 1px solid var(--ink); padding-top: 26px; }
+.f-done:focus { outline: none; }
+.f-done p { margin: 0; font-size: 17.5px; }
+@media (max-width: 860px) { .form-wrap { grid-template-columns: 1fr; gap: 32px; margin-top: 64px; } .f-grid { grid-template-columns: 1fr; } }
+
 footer { padding-block: 36px 48px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -348,6 +381,7 @@ footer { padding-block: 36px 48px; display: flex; justify-content: space-between
         </ul></div>
       <div class="cred"><span class="label"><span lang="zh-Hant">專業證照</span><span lang="en">Certifications</span></span>
         <ul>
+          <li><b><span lang="zh-Hant">HarvardX 科技創業：從實驗室到市場</span><span lang="en">HarvardX · Technology Entrepreneurship: Lab to Market</span></b><span><span lang="zh-Hant">哈佛大學線上課程認證證書（edX）· 2026 · <a class="verify" href="https://courses.edx.org/certificates/afd6d64965274760a8c0fe2a9131751a" target="_blank" rel="noopener">查驗證書</a></span><span lang="en">Verified Certificate, Harvard University via edX · 2026 · <a class="verify" href="https://courses.edx.org/certificates/afd6d64965274760a8c0fe2a9131751a" target="_blank" rel="noopener">Verify</a></span></span></li>
           <li><b><span lang="zh-Hant">iPAS AI 應用規劃師</span><span lang="en">iPAS AI Application Planner</span></b><span>2025</span></li>
           <li><b><span lang="zh-Hant">區塊鏈產業分析師 Level A</span><span lang="en">Blockchain Industry Analyst, Level A</span></b><span>2022</span></li>
           <li><b><span lang="zh-Hant">區塊鏈數位轉型商業規劃師 Level B</span><span lang="en">Blockchain Business Planner, Level B</span></b><span>2021</span></li>
@@ -369,6 +403,44 @@ footer { padding-block: 36px 48px; display: flex; justify-content: space-between
     <div class="c-list">
       <div class="c-row"><span class="label">Email</span><span class="v" id="email">huiwenhelen26@gmail.com</span><button class="copy" id="copy-email" type="button" data-target="email"><span lang="zh-Hant">複製</span><span lang="en">Copy</span></button></div>
       <div class="c-row"><span class="label">Line</span><span class="v" id="line">huiwenhelen</span><button class="copy" id="copy-line" type="button" data-target="line"><span lang="zh-Hant">複製</span><span lang="en">Copy</span></button></div>
+    </div>
+
+    <div class="form-wrap" id="message">
+      <div class="form-head">
+        <span class="label"><span lang="zh-Hant">留言給我</span><span lang="en">Leave a message</span></span>
+        <h3><span lang="zh-Hant">想一起合作嗎？</span><span lang="en">Want to work <em>together?</em></span></h3>
+        <p><span lang="zh-Hant">留下您的姓名與想合作的方向，我會親自閱讀並盡快回覆。</span><span lang="en">Tell me who you are and what you have in mind. I read every message myself and will reply soon.</span></p>
+      </div>
+      <form id="contact-form" novalidate>
+        <div class="f-grid">
+          <label class="f"><span class="label"><span lang="zh-Hant">姓名</span><span lang="en">Name</span> *</span>
+            <input name="name" type="text" required maxlength="100" autocomplete="name"></label>
+          <label class="f"><span class="label">Email *</span>
+            <input name="email" type="email" required maxlength="200" autocomplete="email"></label>
+        </div>
+        <fieldset class="f">
+          <legend class="label"><span lang="zh-Hant">想合作的方向</span><span lang="en">What would you like to discuss?</span> *</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="topic" value="職務機會 Job opportunity" required><span><span lang="zh-Hant">職務機會</span><span lang="en">Job opportunity</span></span></label>
+            <label class="chip"><input type="radio" name="topic" value="策略合作與商務拓展 Partnerships & BD"><span><span lang="zh-Hant">策略合作與商務拓展</span><span lang="en">Partnerships &amp; BD</span></span></label>
+            <label class="chip"><input type="radio" name="topic" value="訂閱增長與變現 Subscription growth"><span><span lang="zh-Hant">訂閱增長與變現</span><span lang="en">Subscription growth</span></span></label>
+            <label class="chip"><input type="radio" name="topic" value="跨境支付與新品上市 Payments & GTM"><span><span lang="zh-Hant">跨境支付與新品上市</span><span lang="en">Payments &amp; go-to-market</span></span></label>
+            <label class="chip"><input type="radio" name="topic" value="顧問／講座 Advisory / speaking"><span><span lang="zh-Hant">顧問／講座</span><span lang="en">Advisory / speaking</span></span></label>
+            <label class="chip"><input type="radio" name="topic" value="其他 Other"><span><span lang="zh-Hant">其他</span><span lang="en">Other</span></span></label>
+          </div>
+        </fieldset>
+        <label class="f"><span class="label"><span lang="zh-Hant">補充說明（選填）</span><span lang="en">Details (optional)</span></span>
+          <textarea name="message" rows="5" maxlength="3000"></textarea></label>
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="f-foot">
+          <button class="btn solid" type="submit" id="f-submit"><span lang="zh-Hant">送出</span><span lang="en">Send</span></button>
+          <p class="f-msg" id="f-msg" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+      <div class="f-done" id="f-done" hidden tabindex="-1">
+        <h3><span lang="zh-Hant">謝謝您的來信！</span><span lang="en">Thank you!</span></h3>
+        <p><span lang="zh-Hant">我已收到您的訊息，閱讀後會盡快回覆您。</span><span lang="en">Your message has reached me. I'll read it and get back to you as soon as I can.</span></p>
+      </div>
     </div>
   </div>
 </section>
@@ -425,6 +497,50 @@ footer { padding-block: 36px 48px; display: flex; justify-content: space-between
         navigator.clipboard.writeText(text).then(done, fallback);
       } else { fallback(); }
     });
+  });
+
+  /* Contact form → Google Apps Script → private Google Sheet */
+  var FORM_ENDPOINT = 'PASTE_APPS_SCRIPT_WEB_APP_URL_HERE';
+  var form = document.getElementById('contact-form');
+  var msg = document.getElementById('f-msg');
+  var submit = document.getElementById('f-submit');
+  var doneBox = document.getElementById('f-done');
+  function t(zh, en) { return page.getAttribute('data-l') === 'en' ? en : zh; }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    msg.textContent = '';
+    var name = form.elements.namedItem('name'), email = form.elements.namedItem('email');
+    var topic = form.querySelector('input[name="topic"]:checked');
+    [name, email].forEach(function (el) { el.removeAttribute('aria-invalid'); });
+    var bad = null;
+    if (!name.value.trim()) { name.setAttribute('aria-invalid', 'true'); bad = bad || name; }
+    if (!email.value.trim() || !email.checkValidity()) { email.setAttribute('aria-invalid', 'true'); bad = bad || email; }
+    if (bad || !topic) {
+      msg.textContent = t('請填寫姓名、有效的 Email，並選擇想合作的方向。', 'Please add your name, a valid email and choose a topic.');
+      (bad || form.querySelector('input[name="topic"]')).focus();
+      return;
+    }
+    var body = new URLSearchParams();
+    body.append('name', name.value.trim());
+    body.append('email', email.value.trim());
+    body.append('topic', topic.value);
+    body.append('message', form.elements.message.value.trim());
+    body.append('website', form.elements.website.value);
+    body.append('lang', page.getAttribute('data-l'));
+    submit.disabled = true;
+    msg.style.color = 'var(--muted)';
+    msg.textContent = t('傳送中…', 'Sending…');
+    fetch(FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', body: body })
+      .then(function () {
+        form.hidden = true;
+        doneBox.hidden = false;
+        doneBox.focus();
+      })
+      .catch(function () {
+        submit.disabled = false;
+        msg.style.color = '';
+        msg.textContent = t('送出失敗，請稍後再試，或直接寄信至 huiwenhelen26@gmail.com。', 'Something went wrong. Please try again, or email huiwenhelen26@gmail.com.');
+      });
   });
 })();
 </script>

@@ -87,6 +87,8 @@ button:focus-visible, a:focus-visible { outline: 1.5px solid var(--ink); outline
 #page[data-l="zh"] .btn { letter-spacing: .2em; }
 .btn.solid { background: var(--ink); color: var(--lavender); }
 .btn.line { background: transparent; color: var(--ink); }
+.btn-icon { display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; border: 1px solid var(--ink); color: var(--ink); text-decoration: none; }
+.btn-icon:hover { background: var(--ink); color: var(--lavender); }
 
 /* Composition: an arch carrying the vertical Chinese name, with a butter sun behind it */
 .art { position: relative; height: clamp(360px, 42vw, 520px); }
@@ -225,7 +227,7 @@ legend.label { padding: 0; margin-bottom: 12px; }
 footer { padding-block: 36px 48px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 
 @media (prefers-reduced-motion: no-preference) {
-  .btn, .copy, .lang button, .nav-r a { transition: background .25s ease, color .25s ease, opacity .2s ease; }
+  .btn, .btn-icon, .copy, .lang button, .nav-r a { transition: background .25s ease, color .25s ease, opacity .2s ease; }
   .sun { animation: rise 1.4s cubic-bezier(.2,.7,.2,1) both; }
   @keyframes rise { from { transform: translateY(14px); } to { transform: none; } }
 }
@@ -266,6 +268,7 @@ footer { padding-block: 36px 48px; display: flex; justify-content: space-between
         <div class="ctas">
           <a class="btn solid" href="#work" data-scroll="work" data-cta="see_results"><span lang="zh-Hant">看實際成果</span><span lang="en">See the results</span></a>
           <a class="btn line" href="#contact" data-scroll="contact" data-cta="get_in_touch"><span lang="zh-Hant">與我聯繫</span><span lang="en">Get in touch</span></a>
+          <a class="btn-icon" href="https://www.linkedin.com/in/huiwen-cheng-40b2ab104/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn" data-cta="linkedin"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
         </div>
       </div>
       <div class="art" aria-hidden="true">
@@ -363,7 +366,7 @@ footer { padding-block: 36px 48px; display: flex; justify-content: space-between
     <div class="story">
       <div><span class="label"><span lang="zh-Hant">挑戰</span><span lang="en">Challenge</span></span><p><span lang="zh-Hant">內部研發的 AI 工具，須整合跨部門資源，方能轉化為可對外銷售的產品。</span><span lang="en">AI tools developed in-house needed cross-functional work before they could be sold externally.</span></p></div>
       <div><span class="label"><span lang="zh-Hant">策略</span><span lang="en">Approach</span></span><p><span lang="zh-Hant">領導 20 至 50 人的兩岸專案團隊，協調 PaaS 與 SaaS 部門，完成差旅、外勤與出勤三款 AI 助理的建構；並以資本市場視角向股東與投資人簡報產品成果。</span><span lang="en">Led a team of 20 to 50 across Taipei and Nanjing, coordinating PaaS and SaaS units to build three AI assistants for travel, field service and attendance, and presented results to shareholders and investors from a capital-markets perspective.</span></p></div>
-      <div class="result"><span class="label"><span lang="zh-Hant">成果</span><span lang="en">Outcome</span></span><p><span lang="zh-Hant">三款 AI 助理完成產品化，正式推向企業客戶市場。</span><span lang="en">Three AI assistants productized and brought to enterprise customers.</span></p></div>
+      <div class="result"><span class="label"><span lang="zh-Hant">成果</span><span lang="en">Outcome</span></span><p><span lang="zh-Hant">三款 AI 助理完成產品化，可推向企業端。</span><span lang="en">Three AI assistants productized and ready for enterprise customers.</span></p></div>
     </div>
   </div></article>
 </section>

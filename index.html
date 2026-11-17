@@ -8,16 +8,16 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://huiwenhelen.github.io/">
 <meta property="og:title" content="Huiwen Cheng">
-<meta property="og:description" content="以敘事開啟合作，以數據驅動增長。 Opening doors through story, growing revenue through data.">
+<meta property="og:description" content="以敘事開啟合作，以數據驅動增長。行銷企劃、商務拓展、KOL 合作、訂閱增長、跨境支付、專案管理與 AI 提效。 Opening doors through story, growing revenue through data: marketing strategy, business development, creator partnerships, subscription growth, cross-border payments, project management and AI enablement.">
 <meta property="og:image" content="https://huiwenhelen.github.io/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="zh_TW">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Huiwen Cheng">
-<meta name="twitter:description" content="以敘事開啟合作，以數據驅動增長。 Opening doors through story, growing revenue through data.">
+<meta name="twitter:description" content="以敘事開啟合作，以數據驅動增長。行銷企劃、商務拓展、KOL 合作、訂閱增長、跨境支付、專案管理與 AI 提效。 Opening doors through story, growing revenue through data: marketing strategy, business development, creator partnerships, subscription growth, cross-border payments, project management and AI enablement.">
 <meta name="twitter:image" content="https://huiwenhelen.github.io/og-image.png">
-<meta name="description" content="以敘事開啟合作，以數據驅動增長。 Opening doors through story, growing revenue through data.">
+<meta name="description" content="以敘事開啟合作，以數據驅動增長。行銷企劃、商務拓展、KOL 合作、訂閱增長、跨境支付、專案管理與 AI 提效。 Opening doors through story, growing revenue through data: marketing strategy, business development, creator partnerships, subscription growth, cross-border payments, project management and AI enablement.">
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V038JCBWET"></script>
 <script>
@@ -104,14 +104,15 @@ button:focus-visible, a:focus-visible { outline: 1.5px solid var(--ink); outline
 }
 
 /* ---------- Figures ---------- */
-.figures { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-bottom: 1px solid var(--hair); }
+.figures { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-bottom: 1px solid var(--hair); }
 .fig { padding: 40px 24px 36px 0; min-width: 0; }
 .fig + .fig { padding-left: 24px; border-left: 1px solid var(--hair); }
-.fig b { display: block; font-family: var(--serif); font-weight: 500; font-size: clamp(44px, 5vw, 64px); line-height: 1; letter-spacing: -.02em; font-variant-numeric: lining-nums; }
+.fig b { display: block; white-space: nowrap; font-family: var(--serif); font-weight: 500; font-size: clamp(40px, 4.2vw, 58px); line-height: 1; letter-spacing: -.02em; font-variant-numeric: lining-nums; }
 .fig span { display: block; margin-top: 14px; font-size: 15px; line-height: 1.6; color: var(--muted); max-width: 24ch; }
-@media (max-width: 760px) {
+.fig b span { display: inline; margin: 0; font-size: inherit; line-height: inherit; color: inherit; max-width: none; }
+@media (max-width: 1000px) {
   .figures { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .fig:nth-child(3) { padding-left: 0; border-left: 0; }
+  .fig:nth-child(odd) { padding-left: 0; border-left: 0; }
   .fig:nth-child(n+3) { border-top: 1px solid var(--hair); }
   .fig { padding-block: 28px; }
 }
@@ -121,7 +122,7 @@ button:focus-visible, a:focus-visible { outline: 1.5px solid var(--ink); outline
 .sec-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 40px; margin-bottom: 64px; align-items: start; }
 .sec-head h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(40px, 5vw, 64px); line-height: 1; letter-spacing: -.02em; margin: 14px 0 0; }
 .sec-head h2 em { font-style: italic; }
-#page[data-l="zh"] .sec-head h2 { font-family: var(--serif-zh); font-weight: 600; font-size: clamp(32px, 3.8vw, 46px); letter-spacing: .12em; line-height: 1.2; }
+#page[data-l="zh"] .sec-head h2 { font-family: var(--serif-zh); font-weight: 600; font-size: clamp(32px, 3.8vw, 46px); letter-spacing: .12em; line-height: 1.2; word-break: keep-all; }
 .sec-head p { margin: 0; padding-top: 36px; font-weight: 400; font-size: 17.5px; max-width: 46ch; }
 @media (max-width: 760px) { .sec { padding-block: 80px; } .sec-head { grid-template-columns: 1fr; gap: 8px; margin-bottom: 44px; } .sec-head p { padding-top: 8px; } }
 
@@ -137,11 +138,19 @@ button:focus-visible, a:focus-visible { outline: 1.5px solid var(--ink); outline
 .pillar p { margin: 0; color: var(--muted); font-weight: 400; }
 @media (max-width: 860px) { .pillars { grid-template-columns: 1fr; gap: 40px; } }
 
+/* ---------- Method & value: four-step rows ---------- */
+.pillars.four { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 36px; }
+.pillars.three { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
+@media (max-width: 1000px) { .pillars.three { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .pillars.three { grid-template-columns: 1fr; } }
+@media (max-width: 1000px) { .pillars.four { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; } }
+@media (max-width: 600px) { .pillars.four { grid-template-columns: 1fr; } }
+
 /* ---------- Work: one colour field per project ---------- */
 .work-intro { padding-block: 112px 64px; }
 .case { padding-block: 96px; }
 .case.c1 { background: var(--butter); } .case.c2 { background: var(--blush); }
-.case.c3 { background: var(--lavender); } .case.c4 { background: var(--butter); }
+.case.c3 { background: var(--lavender); } .case.c4 { background: var(--butter); } .case.c5 { background: var(--blush); }
 .case-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr); gap: 72px; }
 .case h3 { font-family: var(--serif); font-weight: 500; font-size: clamp(32px, 3.8vw, 50px); line-height: 1.08; letter-spacing: -.015em; margin: 18px 0 28px; text-wrap: balance; }
 #page[data-l="zh"] .case h3 { font-family: var(--serif-zh); font-weight: 600; font-size: clamp(25px, 2.7vw, 34px); line-height: 1.5; letter-spacing: .06em; word-break: keep-all; overflow-wrap: anywhere; }
@@ -242,8 +251,8 @@ footer { padding-block: 36px 48px; display: flex; justify-content: space-between
     <nav class="nav" aria-label="Main">
       <div class="wordmark">Helen <em>Cheng</em></div>
       <div class="nav-r">
-        <a href="#expertise" data-scroll="expertise"><span lang="zh-Hant">專長</span><span lang="en">Expertise</span></a>
         <a href="#work" data-scroll="work"><span lang="zh-Hant">案例</span><span lang="en">Work</span></a>
+        <a href="#value" data-scroll="value"><span lang="zh-Hant">專長</span><span lang="en">Expertise</span></a>
         <a href="#career" data-scroll="career"><span lang="zh-Hant">經歷</span><span lang="en">Career</span></a>
         <a href="#contact" data-scroll="contact"><span lang="zh-Hant">聯絡</span><span lang="en">Contact</span></a>
         <div class="lang" role="group" aria-label="Language">
@@ -255,15 +264,20 @@ footer { padding-block: 36px 48px; display: flex; justify-content: space-between
 
     <div class="hero-grid">
       <div>
-        <span class="label"><span lang="zh-Hant">行銷增長 · 商務拓展 · 策略合作</span><span lang="en">Growth Marketing · Business Development · Partnerships</span></span>
+        <span class="label"><span lang="zh-Hant">行銷企劃 · 商務拓展 · 策略合作 · 訂閱增長 · AI 產品</span><span lang="en">Marketing · Business Development · Partnerships · Subscription Growth · AI Products</span></span>
         <h1>Helen <em>Cheng</em></h1>
         <p class="tagline"><span lang="zh-Hant">以敘事開啟合作，以數據驅動增長。</span><span lang="en">Opening doors through story, growing revenue through data.</span></p>
         <p class="lede"><span lang="zh-Hant">如果你的團隊正需要有人開拓合作夥伴、提高付費轉換，或把產品帶進海外市場，我能獨立從找資源、談合作一路推進到成交，並以數據說明每一步的成效。</span><span lang="en">If your team needs someone to open partner channels, lift paid conversion or take a product into new markets, I can drive it end to end on my own, from sourcing and negotiating to closing, and show the results in data.</span></p>
         <ul class="hashtags" aria-label="Keywords">
-          <li><span lang="zh-Hant">#業務增長</span><span lang="en">#BusinessGrowth</span></li>
-          <li><span lang="zh-Hant">#項目管理</span><span lang="en">#ProjectManagement</span></li>
-          <li><span lang="zh-Hant">#專業公關</span><span lang="en">#PublicRelations</span></li>
-          <li><span lang="zh-Hant">#數位行銷</span><span lang="en">#DigitalMarketing</span></li>
+          <li><span lang="zh-Hant">#行銷企劃</span><span lang="en">#MarketingStrategy</span></li>
+          <li><span lang="zh-Hant">#數據洞察</span><span lang="en">#DataInsight</span></li>
+          <li><span lang="zh-Hant">#商務拓展</span><span lang="en">#BusinessDevelopment</span></li>
+          <li><span lang="zh-Hant">#KOL合作</span><span lang="en">#CreatorPartnerships</span></li>
+          <li><span lang="zh-Hant">#訂閱增長與留存</span><span lang="en">#SubscriptionGrowthAndRetention</span></li>
+          <li><span lang="zh-Hant">#跨境支付</span><span lang="en">#CrossBorderPayments</span></li>
+          <li><span lang="zh-Hant">#專案管理</span><span lang="en">#ProjectManagement</span></li>
+          <li><span lang="zh-Hant">#公關</span><span lang="en">#PublicRelations</span></li>
+          <li><span lang="zh-Hant">#AI提效</span><span lang="en">#AIEnablement</span></li>
         </ul>
         <div class="ctas">
           <a class="btn solid" href="#work" data-scroll="work" data-cta="see_results"><span lang="zh-Hant">看實際成果</span><span lang="en">See the results</span></a>
@@ -283,100 +297,137 @@ footer { padding-block: 36px 48px; display: flex; justify-content: space-between
 
 <div class="inner">
   <section class="figures" aria-label="Key figures">
-    <div class="fig"><b>17+</b><span lang="zh-Hant">位 YouTube 創作者夥伴，皆由自主開發簽約</span><span lang="en">YouTube creator partners, each sourced and signed directly</span></div>
-    <div class="fig"><b>90+</b><span lang="zh-Hant">位付費訂戶，於新方案上市三個月內達成</span><span lang="en">paid subscribers within three months of a new tier's launch</span></div>
-    <div class="fig"><b>700%</b><span lang="zh-Hant">財新國際訂閱續訂率提升幅度</span><span lang="en">rise in subscription renewal rate at Caixin Global</span></div>
-    <div class="fig"><b>10+</b><span lang="zh-Hant">年經驗，橫跨台灣、中國大陸與國際市場</span><span lang="en">years across Taiwan, mainland China and global markets</span></div>
+    <div class="fig"><b><span lang="zh-Hant">百萬+</span><span lang="en">1M+</span></b><span lang="zh-Hant">合作 KOL 覆蓋的 YouTube 追蹤者，為 Vpin 從 0 打開台灣市場</span><span lang="en">YouTube followers across partner creators' channels, opening up Taiwan for Vpin from scratch</span></div>
+    <div class="fig"><b>700%</b><span lang="zh-Hant">財新國際訂閱續訂率提升，來自產品重構與數據追蹤</span><span lang="en">rise in Caixin Global's renewal rate, driven by a product rebuild and data tracking</span></div>
+    <div class="fig"><b>3 ETH</b><span lang="zh-Hant">端傳媒 NFT「失去的____」營收，華語媒體首發</span><span lang="en">revenue from "The Erased," the first NFT from a Chinese-language newsroom</span></div>
+    <div class="fig"><b><span lang="zh-Hant">3 款</span><span lang="en">3</span></b><span lang="zh-Hant">AI 助理完成產品化，推動鼎新走向 AI</span><span lang="en">AI assistants productized, helping steer Digiwin toward AI</span></div>
+    <div class="fig"><b><span lang="zh-Hant">10 萬+</span><span lang="en">100k+</span></b><span lang="zh-Hant">中央社新聞粉絲團追蹤數，以數據修正社群策略達成</span><span lang="en">followers on CNA's news Facebook page, reached through data-driven strategy</span></div>
   </section>
 
-  <section class="sec" id="expertise">
-    <div class="sec-head">
-      <div><span class="label"><span lang="zh-Hant">核心能力</span><span lang="en">Capabilities</span></span>
-        <h2><span lang="zh-Hant">我能為團隊帶來什麼</span><span lang="en">What I <em>bring</em></span></h2></div>
-      <p><span lang="zh-Hant">從找到對的合作夥伴，到讓用戶願意付費並持續續訂，再到帶產品走向海外市場。</span><span lang="en">From finding the right partners, to getting users to pay and stay, to taking products across borders.</span></p>
-    </div>
-    <div class="pillars">
-      <article class="pillar"><span class="swatch"></span>
-        <h3><span lang="zh-Hant">策略合作與商務拓展</span><span lang="en">Strategic Partnerships &amp; Business Development</span></h3>
-        <p><span lang="zh-Hant">找出合適的創作者、媒體與企業夥伴，從提案、條件談判到簽約獨立完成，為產品打開新的獲客渠道。</span><span lang="en">Identify the right creators, media and enterprise partners, and take them from pitch and negotiation to signed deal, opening new acquisition channels.</span></p></article>
-      <article class="pillar"><span class="swatch"></span>
-        <h3><span lang="zh-Hant">訂閱增長與營收變現</span><span lang="en">Subscription Growth &amp; Monetization</span></h3>
-        <p><span lang="zh-Hant">設計付費方案，優化從獲客、轉換到續訂的漏斗，並以數據追蹤與用戶調研找出真正推動增長的關鍵。</span><span lang="en">Design paid tiers, improve the funnel from acquisition to renewal, and use data and user research to find the levers that actually move growth.</span></p></article>
-      <article class="pillar"><span class="swatch"></span>
-        <h3><span lang="zh-Hant">跨境支付與新品上市</span><span lang="en">Cross-Border Payments &amp; Go-to-Market</span></h3>
-        <p><span lang="zh-Hant">整合 PayPal、Stripe 與加密貨幣支付，讓海外用戶順利付款，並帶領 Web3 與 AI 新產品進入市場。</span><span lang="en">Integrate PayPal, Stripe and crypto payments so overseas users can pay with ease, and take new Web3 and AI products to market.</span></p></article>
-    </div>
-  </section>
 </div>
 
 <section id="work">
-  <div class="inner work-intro" style="padding-top:0">
-    <div class="sec-head" style="margin-bottom:0">
-      <div><span class="label"><span lang="zh-Hant">代表案例</span><span lang="en">Selected work</span></span>
-        <h2><span lang="zh-Hant">四個代表案例</span><span lang="en">Four <em>projects</em></span></h2></div>
-      <p><span lang="zh-Hant">橫跨媒體、Web3 與 AI，呈現我如何界定問題、制定策略，並交付成果。</span><span lang="en">Across media, Web3 and AI, each shows how I frame the problem, set the strategy and deliver the result.</span></p>
-    </div>
+  <div class="inner work-intro" style="padding-top:96px;padding-bottom:40px">
+    <span class="label"><span lang="zh-Hant">代表案例</span><span lang="en">Selected work</span></span>
   </div>
 
   <article class="band case c1"><div class="inner case-grid">
     <div>
-      <span class="label"><span lang="zh-Hant">繁星媒合體 Vpin · 2025–2026 · 台北</span><span lang="en">Osparks (Vpin) · 2025–2026 · Taipei</span></span>
-      <h3><span lang="zh-Hant">從零建立創作者合作生態，推動付費訂閱上市</span><span lang="en">Building a creator ecosystem to launch a paid subscription</span></h3>
-      <ul class="tags"><li lang="zh-Hant">創作者合作</li><li lang="en">Creator partnerships</li><li lang="zh-Hant">付費訂閱</li><li lang="en">Paid subscription</li><li lang="zh-Hant">企業商務</li><li lang="en">Enterprise BD</li></ul>
+      <span class="label"><span lang="zh-Hant">案例 01 · 繁星媒合體 Vpin · 市場開拓</span><span lang="en">Case 01 · Osparks (Vpin) · Market entry</span></span>
+      <h3><span lang="zh-Hant">從 0 打開台灣市場</span><span lang="en">Opening up the Taiwan market from scratch</span></h3>
+      <ul class="tags"><li lang="zh-Hant">KOL 開發</li><li lang="en">Creator sourcing</li><li lang="zh-Hant">付費轉換</li><li lang="en">Paid conversion</li><li lang="zh-Hant">AI 產品上市</li><li lang="en">AI product launch</li></ul>
     </div>
     <div class="story">
-      <div><span class="label"><span lang="zh-Hant">挑戰</span><span lang="en">Challenge</span></span><p><span lang="zh-Hant">B2C Premium 訂閱方案即將上市，公司卻尚無任何推廣合作夥伴。</span><span lang="en">A B2C Premium tier was heading to market with no promotion partners in place.</span></p></div>
-      <div><span class="label"><span lang="zh-Hant">策略</span><span lang="en">Approach</span></span><p><span lang="zh-Hant">自主開發並篩選 YouTube 創作者與 KOL，主導提案與合作條件洽談；同步規劃中英文 Google Ads 投放，並於產業展會主導企業商務洽談，建立多元獲客管道。</span><span lang="en">Sourced and vetted YouTube creators and KOLs, led pitching and term negotiations, ran bilingual Google Ads campaigns, and led enterprise conversations at industry expos to diversify acquisition.</span></p></div>
-      <div class="result"><span class="label"><span lang="zh-Hant">成果</span><span lang="en">Outcome</span></span><p><span lang="zh-Hant">簽約 17 位以上創作者夥伴；方案上市三個月內，累積逾 90 位付費訂戶。</span><span lang="en">Seventeen-plus creator partners signed, and more than ninety paid subscribers within three months of launch.</span></p></div>
+      <div><span class="label"><span lang="zh-Hant">KOL 開發</span><span lang="en">Creator sourcing</span></span><p><span lang="zh-Hant">為 AI 影音知識庫 Vpin 從 0 開始，pitch 500 位創作者，簽約 17 位以上科技、財經、說書、建築領域的專家 KOL。</span><span lang="en">Built the creator pipeline for Vpin, an AI video knowledge base, from scratch: pitched 500 creators and signed 17+ experts in tech, finance, book reviews and architecture.</span></p></div>
+      <div><span class="label"><span lang="zh-Hant">全網覆蓋</span><span lang="en">Reach</span></span><p><span lang="zh-Hant">合作 KOL 覆蓋百萬以上 YouTube 追蹤者，並搭配中英文 Google Ads 與產業展會擴大觸及。</span><span lang="en">Partner creators' channels reach over one million YouTube followers; bilingual Google Ads and industry expos extended that reach further.</span></p></div>
+      <div><span class="label"><span lang="zh-Hant">粉絲轉換</span><span lang="en">Fan conversion</span></span><p><span lang="zh-Hant">把 KOL 的粉絲轉為 Vpin 用戶，推動 B2C Premium 付費方案上市。</span><span lang="en">Turned creators' audiences into Vpin users and drove the launch of the B2C Premium tier.</span></p></div>
+      <div class="result"><span class="label"><span lang="zh-Hant">成果</span><span lang="en">Outcome</span></span><p><span lang="zh-Hant">Pitch 500 位創作者、簽約 17+ 位專家 KOL；方案上市三個月內累積 90+ 位付費訂戶。</span><span lang="en">500 creators pitched and 17+ expert creators signed; 90+ paid subscribers within three months of launch.</span></p></div>
     </div>
   </div></article>
 
   <article class="band case c2"><div class="inner case-grid">
     <div>
-      <span class="label"><span lang="zh-Hant">財新國際 · 2018–2021 · 北京與台灣</span><span lang="en">Caixin Global · 2018–2021 · Beijing &amp; Taiwan</span></span>
-      <h3><span lang="zh-Hant">重構訂閱商城，打通海外付費通路</span><span lang="en">Rebuilding the subscription store for international readers</span></h3>
-      <ul class="tags"><li lang="zh-Hant">跨境支付</li><li lang="en">Cross-border payments</li><li lang="zh-Hant">用戶留存</li><li lang="en">Retention</li><li lang="zh-Hant">增長數據</li><li lang="en">Growth analytics</li></ul>
+      <span class="label"><span lang="zh-Hant">案例 02 · 財新國際 · 訂閱增長</span><span lang="en">Case 02 · Caixin Global · Subscription growth</span></span>
+      <h3><span lang="zh-Hant">重構訂閱商城與 App 數據體系，續訂率提升 700%</span><span lang="en">Rebuilding the subscription store and app data system to lift renewals 700%</span></h3>
+      <ul class="tags"><li lang="zh-Hant">訂閱產品</li><li lang="en">Subscription product</li><li lang="zh-Hant">數據追蹤</li><li lang="en">Data tracking</li><li lang="zh-Hant">海外渠道</li><li lang="en">Overseas channels</li></ul>
     </div>
     <div class="story">
-      <div><span class="label"><span lang="zh-Hant">挑戰</span><span lang="en">Challenge</span></span><p><span lang="zh-Hant">海外讀者的付款管道有限，網站與 App 在海外的存取效能亦影響轉換。</span><span lang="en">Overseas readers had few ways to pay, and slow access outside mainland China held back conversion.</span></p></div>
-      <div><span class="label"><span lang="zh-Hant">策略</span><span lang="en">Approach</span></span><p><span lang="zh-Hant">主導訂閱商城重構，整合 PayPal 與 Stripe，重建用戶中心並提升海外存取速度；同時拓展社群、海外優惠平台與新聞聚合等獲客管道，並建立增長與留存的數據追蹤機制。</span><span lang="en">Led the store rebuild, integrating PayPal and Stripe, rebuilding the user center and improving overseas performance; opened channels across social communities, coupon platforms and news aggregators, and set up growth and retention tracking.</span></p></div>
-      <div class="result"><span class="label"><span lang="zh-Hant">成果</span><span lang="en">Outcome</span></span><p><span lang="zh-Hant">續訂率提升 700%；App 累積用戶成長 166.78%，活躍用戶成長 104.78%。</span><span lang="en">Renewal rate up 700%, cumulative app users up 166.78%, and active users up 104.78%.</span></p></div>
+      <div><span class="label"><span lang="zh-Hant">產品研究與重構</span><span lang="en">Product research &amp; rebuild</span></span><p><span lang="zh-Hant">統籌訂閱業務的產品研究、建置與優化，涵蓋訂閱頁功能、支付系統與用戶流程：重構訂閱商城、接入 PayPal 與 Stripe 等海外第三方支付、建置用戶中心、改版新聞首頁、提升並監測海外存取速度，並優化 App。</span><span lang="en">Led product research, development and optimization across the subscription business, covering subscription-page features, payment systems and user flow: rebuilt the subscription store, integrated overseas third-party payment providers such as PayPal and Stripe, built the user center, redesigned the news homepage, improved and monitored overseas access speed, and optimized the app.</span></p></div>
+      <div><span class="label"><span lang="zh-Hant">數據追蹤體系</span><span lang="en">Data tracking</span></span><p><span lang="zh-Hant">重整新聞訂閱 App 業務的增長與留存報表，建立業務數據追蹤方法，用數據指導策略、達成營運目標；並結合時事熱點，與編輯部、產品與行銷團隊協作。</span><span lang="en">Reorganized growth and retention reporting for the news subscription app business, and built a data-tracking methodology to guide strategy and hit operating goals. Worked with the newsroom, product and marketing teams to capitalize on trending news.</span></p></div>
+      <div><span class="label"><span lang="zh-Hant">外部資源開拓</span><span lang="en">External channels</span></span><p><span lang="zh-Hant">研究並拓展臉書社團、海外優惠券平台、海外線上市場與新聞聚合平台：在聖誕與新年檔期從優惠券平台帶進外部訂戶，並把 Caixin Global 推廣給臉書社團用戶。</span><span lang="en">Researched and developed external channels, including Facebook groups, overseas coupon platforms, overseas online marketplaces and news aggregators. Coupon platforms brought in new subscribers over the Christmas and New Year holidays, and Facebook groups introduced Caixin Global to new readers.</span></p></div>
+      <div class="result"><span class="label"><span lang="zh-Hant">成果</span><span lang="en">Outcome</span></span><p><span lang="zh-Hant">訂閱續訂率提升 700%；App 累積用戶成長 166.78%，活躍用戶成長 104.78%。</span><span lang="en">Subscription renewal rate up 700%, cumulative app users up 166.78%, and active app users up 104.78%.</span></p></div>
     </div>
   </div></article>
 
   <article class="band case c3"><div class="inner case-grid">
     <div>
-      <span class="label"><span lang="zh-Hant">端傳媒 · 2021–2023 · 遠端</span><span lang="en">Initium Media · 2021–2023 · Remote</span></span>
-      <h3><span lang="zh-Hant">主導華語媒體首個 NFT 發行</span><span lang="en">Leading the first NFT from a Chinese-language newsroom</span></h3>
+      <span class="label"><span lang="zh-Hant">案例 03 · 端傳媒 · 新業務創收</span><span lang="en">Case 03 · Initium Media · New revenue</span></span>
+      <h3><span lang="zh-Hant">開出新收入線，發行華語媒體首個 NFT</span><span lang="en">Opening a new revenue line with the first NFT from a Chinese-language newsroom</span></h3>
       <ul class="tags"><li>Web3</li><li lang="zh-Hant">新品上市</li><li lang="en">Product launch</li><li lang="zh-Hant">媒體關係</li><li lang="en">Media relations</li></ul>
     </div>
     <div class="story">
-      <div><span class="label"><span lang="zh-Hant">挑戰</span><span lang="en">Challenge</span></span><p><span lang="zh-Hant">端傳媒有意探索 Web3 營運模式，而華語媒體尚無發行 NFT 的先例可循。</span><span lang="en">Initium wanted to explore Web3, and no Chinese-language outlet had issued an NFT before.</span></p></div>
-      <div><span class="label"><span lang="zh-Hant">策略</span><span lang="en">Approach</span></span><p><span lang="zh-Hant">完成市場調研與商業評估，洽談 Web3 技術與發行夥伴，並統籌媒體關係與新聞稿發布；同期推出新訂閱方案「端 Plus」，導入海外與加密貨幣支付。</span><span lang="en">Completed the research and business case, secured Web3 technology and issuance partners, and led media relations and the press release; in parallel, launched the "Initium Plus" tier with overseas and crypto payments.</span></p></div>
+      <div><span class="label"><span lang="zh-Hant">商業評估</span><span lang="en">Business case</span></span><p><span lang="zh-Hant">完成市場調研與商業評估，在華語媒體尚無先例的情況下，為端傳媒找出 Web3 的營運切入點。</span><span lang="en">Researched the market and built the business case, charting Initium's entry into Web3 when no Chinese-language outlet had done so before.</span></p></div>
+      <div><span class="label"><span lang="zh-Hant">夥伴與發行</span><span lang="en">Partners &amp; launch</span></span><p><span lang="zh-Hant">洽談 Web3 技術與發行夥伴，並統籌媒體關係與新聞稿發布，一路推進到正式上線。</span><span lang="en">Secured Web3 technology and issuance partners, and managed media relations and the press release through launch.</span></p></div>
+      <div><span class="label"><span lang="zh-Hant">訂閱新方案</span><span lang="en">New subscription tier</span></span><p><span lang="zh-Hant">同期推出訂閱方案「端 Plus」，導入海外與加密貨幣支付，打通跨境購買。</span><span lang="en">In parallel, launched the "Initium Plus" tier with overseas and crypto payments to enable cross-border purchases.</span></p></div>
       <div class="result"><span class="label"><span lang="zh-Hant">成果</span><span lang="en">Outcome</span></span><p><span lang="zh-Hant">「失去的____」成為華語媒體首發 NFT，創造 3 ETH 營收，並獲產業媒體報導。</span><span lang="en">"The Erased" became the first NFT from a Chinese-language outlet, generated 3 ETH in revenue, and earned industry coverage.</span></p></div>
     </div>
   </div></article>
 
   <article class="band case c4"><div class="inner case-grid">
     <div>
-      <span class="label"><span lang="zh-Hant">鼎新數智 · 2023–2025 · 台北／南京</span><span lang="en">Digiwin · 2023–2025 · Taipei / Nanjing</span></span>
-      <h3><span lang="zh-Hant">統籌兩岸團隊，推動 AI 產品商業化</span><span lang="en">Leading a cross-strait team to commercialize AI</span></h3>
-      <ul class="tags"><li lang="zh-Hant">AI 產品</li><li lang="en">AI products</li><li lang="zh-Hant">團隊領導</li><li lang="en">Team leadership</li><li lang="zh-Hant">投資人溝通</li><li lang="en">Investor relations</li></ul>
+      <span class="label"><span lang="zh-Hant">案例 04 · 鼎新數智 · AI 轉型</span><span lang="en">Case 04 · Digiwin · AI transformation</span></span>
+      <h3><span lang="zh-Hant">從前沿調研到客戶落地，推動公司走向 AI</span><span lang="en">From frontier research to client delivery, steering the company toward AI</span></h3>
+      <ul class="tags"><li lang="zh-Hant">AI 產品立項</li><li lang="en">AI product initiation</li><li lang="zh-Hant">場景設計</li><li lang="en">Use-case design</li><li lang="zh-Hant">跨部門領導</li><li lang="en">Cross-functional leadership</li><li lang="zh-Hant">客戶落地</li><li lang="en">Client delivery</li></ul>
     </div>
     <div class="story">
-      <div><span class="label"><span lang="zh-Hant">挑戰</span><span lang="en">Challenge</span></span><p><span lang="zh-Hant">內部研發的 AI 工具，須整合跨部門資源，方能轉化為可對外銷售的產品。</span><span lang="en">AI tools developed in-house needed cross-functional work before they could be sold externally.</span></p></div>
-      <div><span class="label"><span lang="zh-Hant">策略</span><span lang="en">Approach</span></span><p><span lang="zh-Hant">領導 20 至 50 人的兩岸專案團隊，協調 PaaS 與 SaaS 部門，完成差旅、外勤與出勤三款 AI 助理的建構；並以資本市場視角向股東與投資人簡報產品成果。</span><span lang="en">Led a team of 20 to 50 across Taipei and Nanjing, coordinating PaaS and SaaS units to build three AI assistants for travel, field service and attendance, and presented results to shareholders and investors from a capital-markets perspective.</span></p></div>
-      <div class="result"><span class="label"><span lang="zh-Hant">成果</span><span lang="en">Outcome</span></span><p><span lang="zh-Hant">三款 AI 助理完成產品化，可推向企業端。</span><span lang="en">Three AI assistants productized and ready for enterprise customers.</span></p></div>
+      <div><span class="label"><span lang="zh-Hant">前沿調研與立項</span><span lang="en">Research &amp; initiation</span></span><p><span lang="zh-Hant">調研 AI 科技前沿與應用趨勢，提出內部立項，爭取公司資源投入 AI 助理開發。</span><span lang="en">Researched frontier AI technology and adoption trends, then proposed the project internally and secured resources to develop AI assistants.</span></p></div>
+      <div><span class="label"><span lang="zh-Hant">場景發想</span><span lang="en">Use-case design</span></span><p><span lang="zh-Hant">從企業日常營運的痛點出發，發想差旅、外勤、考勤等 AI 應用場景，定義每款助理要解決的問題。</span><span lang="en">Started from everyday operational pain points in enterprises to design AI use cases such as travel, field work and attendance, defining the problem each assistant would solve.</span></p></div>
+      <div><span class="label"><span lang="zh-Hant">帶隊落地</span><span lang="en">Team delivery</span></span><p><span lang="zh-Hant">帶領 20 至 50 人的兩岸跨部門團隊，串接 PaaS 與 SaaS 部門，將多款 AI 助理從原型做到可交付的產品。</span><span lang="en">Led a 20–50 person cross-strait team spanning PaaS and SaaS units to take multiple AI assistants from prototype to deliverable product.</span></p></div>
+      <div><span class="label"><span lang="zh-Hant">推向客戶端</span><span lang="en">To market</span></span><p><span lang="zh-Hant">向內部、股東與投資人 Demo AI 應用場景凝聚共識；與兩岸營運區及 SaaS 團隊合作，將 AI 助理推向企業客戶端。</span><span lang="en">Demonstrated the use cases to internal teams, shareholders and investors to build buy-in, then worked with operating units in Taiwan and mainland China and the SaaS team to bring the assistants to enterprise clients.</span></p></div>
+      <div class="result"><span class="label"><span lang="zh-Hant">成果</span><span lang="en">Outcome</span></span><p><span lang="zh-Hant">多款 AI 助理完成產品化並推向企業客戶；公司轉向以 AI 升級 ERP，幫助客戶留存。</span><span lang="en">Multiple AI assistants productized and brought to enterprise clients, and the company refocused on AI upgrades for its ERP system, helping retain clients.</span></p></div>
+    </div>
+  </div></article>
+
+  <article class="band case c5"><div class="inner case-grid">
+    <div>
+      <span class="label"><span lang="zh-Hant">案例 05 · 中央通訊社 · 社群增長</span><span lang="en">Case 05 · Central News Agency · Social growth</span></span>
+      <h3><span lang="zh-Hant">用數據修正策略，粉絲團突破 10 萬</span><span lang="en">Using data to grow CNA's news page past 100,000 followers</span></h3>
+      <ul class="tags"><li lang="zh-Hant">社群經營</li><li lang="en">Social media</li><li lang="zh-Hant">議題包裝</li><li lang="en">Topic packaging</li><li lang="zh-Hant">KOL 合作</li><li lang="en">Creator partnerships</li></ul>
+    </div>
+    <div class="story">
+      <div><span class="label"><span lang="zh-Hant">數據洞察</span><span lang="en">Data insight</span></span><p><span lang="zh-Hant">分析社群成效數據，作為修正營運策略的基礎。</span><span lang="en">Analyzed social performance data and used it to recalibrate the page's strategy.</span></p></div>
+      <div><span class="label"><span lang="zh-Hant">議題包裝</span><span lang="en">Topic packaging</span></span><p><span lang="zh-Hant">透過內容議題的包裝與操作，提升觸及與互動。</span><span lang="en">Framed and packaged news topics to boost reach and engagement.</span></p></div>
+      <div><span class="label"><span lang="zh-Hant">跨界合作</span><span lang="en">Cross-media partnerships</span></span><p><span lang="zh-Hant">與 Smart 智富、旅讀中國、大家健康等雜誌進行內容合作，並與 KOL 線上合作，擴大受眾。</span><span lang="en">Ran content partnerships with magazines such as Smart Business Weekly, Orchina Travel and Health for All, and online collaborations with creators, to widen the audience.</span></p></div>
+      <div class="result"><span class="label"><span lang="zh-Hant">成果</span><span lang="en">Outcome</span></span><p><span lang="zh-Hant">中央社新聞粉絲團突破 10 萬粉絲。</span><span lang="en">The CNA news Facebook page passed 100,000 followers.</span></p></div>
     </div>
   </div></article>
 </section>
+
+<div class="inner">
+  <section class="sec" id="value">
+    <div class="sec-head">
+      <div><span class="label"><span lang="zh-Hant">我能帶來什麼</span><span lang="en">What I bring</span></span>
+        <h2><span lang="zh-Hant">我擅長的事</span><span lang="en">What I <em>do best</em></span></h2></div>
+      <p><span lang="zh-Hant">從策略、合作到變現與落地：策略有數據根據，合作能談成，成果能變成營收，執行能跨部門落地，並用 AI 讓整個團隊做得更快。</span><span lang="en">Strategy grounded in data, partnerships that close, growth that turns into revenue, execution that lands across teams, and AI that makes everyone faster.</span></p>
+    </div>
+    <div class="pillars three" style="row-gap:56px">
+      <article class="pillar"><span class="swatch" style="background:var(--lavender-deep)"></span>
+        <h3><span lang="zh-Hant">行銷企劃策略</span><span lang="en">Marketing strategy</span></h3>
+        <p><span lang="zh-Hant">從數據洞察出發，規劃社群議題、內容策略與檔期活動。</span><span lang="en">Plan social topics, content strategy and seasonal campaigns grounded in data insight.</span></p></article>
+      <article class="pillar"><span class="swatch" style="background:var(--butter);box-shadow:inset 0 0 0 1px rgba(44,36,51,.08)"></span>
+        <h3><span lang="zh-Hant">數據驅動優化</span><span lang="en">Data-driven optimization</span></h3>
+        <p><span lang="zh-Hant">以成效數據回頭修正策略，讓每一檔活動越做越準。</span><span lang="en">Feed performance data back into strategy so every campaign lands more precisely than the last.</span></p></article>
+      <article class="pillar"><span class="swatch" style="background:var(--blush)"></span>
+        <h3><span lang="zh-Hant">策略合作與商務拓展</span><span lang="en">Partnerships &amp; business development</span></h3>
+        <p><span lang="zh-Hant">從找資源、提案、條件談判到簽約獨立完成，並於展會主導企業商務洽談。</span><span lang="en">Take partnerships from sourcing and pitching through negotiation to signed deals, and lead enterprise BD at trade expos.</span></p></article>
+      <article class="pillar"><span class="swatch" style="background:var(--ink)"></span>
+        <h3><span lang="zh-Hant">KOL、媒體與公關</span><span lang="en">Creators, media &amp; PR</span></h3>
+        <p><span lang="zh-Hant">開發並經營創作者／KOL 合作、媒體內容合作，統籌媒體關係與新聞稿發布。</span><span lang="en">Build and manage creator, KOL and media partnerships, and handle media relations and press releases.</span></p></article>
+      <article class="pillar"><span class="swatch" style="background:var(--lavender-deep)"></span>
+        <h3><span lang="zh-Hant">訂閱增長與變現</span><span lang="en">Subscription growth &amp; monetization</span></h3>
+        <p><span lang="zh-Hant">設計付費方案，優化從獲客、轉換到續訂的漏斗，並以用戶調研找出增長關鍵。</span><span lang="en">Design paid tiers, improve the funnel from acquisition to renewal, and use user research to find what moves growth.</span></p></article>
+      <article class="pillar"><span class="swatch" style="background:var(--butter);box-shadow:inset 0 0 0 1px rgba(44,36,51,.08)"></span>
+        <h3><span lang="zh-Hant">跨境支付</span><span lang="en">Cross-border payments</span></h3>
+        <p><span lang="zh-Hant">整合 PayPal、Stripe 與加密貨幣支付，打通海外用戶的付款流程，讓跨境購買順利完成。</span><span lang="en">Integrate PayPal, Stripe and crypto payments so overseas users can complete cross-border purchases smoothly.</span></p></article>
+      <article class="pillar"><span class="swatch" style="background:var(--rose)"></span>
+        <h3><span lang="zh-Hant">新品上市（GTM）</span><span lang="en">Go-to-market</span></h3>
+        <p><span lang="zh-Hant">為 SaaS 與 AI 新產品規劃市場進入策略：定位、付費方案、渠道與合作夥伴，從 0 推到上市並取得第一批付費用戶。</span><span lang="en">Plan market entry for new SaaS and AI products, covering positioning, paid tiers, channels and partners, from launch through to the first paying customers.</span></p></article>
+      <article class="pillar"><span class="swatch" style="background:var(--blush)"></span>
+        <h3><span lang="zh-Hant">跨部門專案管理</span><span lang="en">Cross-team project management</span></h3>
+        <p><span lang="zh-Hant">曾帶領 20–50 人兩岸團隊，串接各部門，確保專案如期、如質落地。</span><span lang="en">Coordinate across departments, including 20–50 person cross-strait teams, so projects land on time and to standard.</span></p></article>
+      <article class="pillar"><span class="swatch" style="background:var(--ink)"></span>
+        <h3><span lang="zh-Hant">AI 工具提效</span><span lang="en">AI-powered productivity</span></h3>
+        <p><span lang="zh-Hant">導入 AI 工具，提升整個團隊的生產力、降低溝通成本。</span><span lang="en">Bring in AI tools that raise the whole team's productivity and cut communication costs.</span></p></article>
+    </div>
+  </section>
+</div>
 
 <div class="inner">
   <section class="sec" id="career">
     <div class="sec-head">
       <div><span class="label"><span lang="zh-Hant">職涯歷程</span><span lang="en">Career</span></span>
         <h2><span lang="zh-Hant">職涯歷程</span><span lang="en">The <em>path</em></span></h2></div>
-      <p><span lang="zh-Hant">從新聞編輯台到商務拓展第一線，每一段經歷都累積了理解市場與溝通價值的能力。</span><span lang="en">From the newsroom to the front line of business development, each role has sharpened how I read markets and communicate value.</span></p>
+      <p><span lang="zh-Hant">從新聞編輯台、訂閱增長、AI 產品到市場開拓，每一段都在同一個問題上累積答案：怎麼用數據與內容，讓合作變成成果。</span><span lang="en">From the newsroom to subscription growth, AI products and market entry, each role has added to the same answer: how data and content turn partnerships into results.</span></p>
     </div>
     <ol class="career">
       <li><span class="yr">2025 — 2026</span><div><strong><span lang="zh-Hant">成長行銷與商務開發協理</span><span lang="en">Associate Director, Growth Marketing &amp; BD</span></strong><span class="org"><span lang="zh-Hant">繁星媒合體（Vpin / Osparks）· 台北</span><span lang="en">Osparks (Vpin) · Taipei</span></span></div><span class="note"><span lang="zh-Hant">創作者合作生態、付費訂閱上市、企業商務洽談</span><span lang="en">Creator partnerships, paid subscription launch, enterprise BD</span></span></li>
